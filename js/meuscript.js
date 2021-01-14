@@ -16,12 +16,19 @@ $(document).ready(function() {
     function pegarVideos(id){
         $.get("https://www.googleapis.com/youtube/v3/playlistItems", {
             part: 'snippet',
-            maxResults: 10,
+            maxResults: 12,
             playlistId: id,
             key: 'AIzaSyAcPYkguKj7oqrRrADgFl5VU2hDjAe9frA'
     },          
         function(data) {
-            console.log(data);
+                var imagem;
+                var arquivo;
+
+                $.each(data.items, function(i, item) {
+                    imagem = item.snippet.thumbnails.medium.url;
+                    arquivo = '<li><img src="' + imagem + '"/></li>';
+                    $('div#janela ul').append(arquivo);
+                });
             }
         
         )
