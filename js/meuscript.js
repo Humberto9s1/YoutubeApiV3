@@ -14,7 +14,18 @@ $(document).ready(function() {
     )
 
     function pegarVideos(id){
-        console.log(id);
+        $.get("https://www.googleapis.com/youtube/v3/playlistItems", {
+            part: 'snippet',
+            maxResults: 10,
+            playlistId: id,
+            key: 'AIzaSyAcPYkguKj7oqrRrADgFl5VU2hDjAe9frA'
+    },          
+        function(data) {
+            console.log(data);
+            }
+        
+        )
+        
     }
 
 });
