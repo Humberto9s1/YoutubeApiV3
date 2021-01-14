@@ -15,12 +15,51 @@
                 padding:0;
             }
             
-            div#janela ul li {
+            div#janela ul li.principal {
+                position: relative;
                 list-style: none;
                 display: inline-block;
                 margin: 20px;
                 cursor: pointer;
+                width: 320px;
+                height: 180px;
             }   
+
+            div#janela ul li.principal div.foto {
+                position: absolute;
+                top: 0;left: 0;
+                width: 320px;height:180px;
+                z-index: 1;
+                clip: rect(0 320px 180px 0);
+            }
+            
+            div#janela ul li.principal div.foto div.legenda {
+                position: absolute;
+                top: 150px;left: 0;
+                width: 310px;height: 150px;
+                padding: 5px;
+                z-index: 2;
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.7);
+
+                -webkit-transition: all 0.5s ease-out 0s;
+                -moz-transition: all 0.5s ease-out 0s;
+                -ms-transition: all 0.5s ease-out 0s;
+                -o-transition: all 0.5s ease-out 0s;
+                transition: all 0.5s ease-out 0s;
+            }
+
+            div#janela ul li.principal div.foto div.legenda:hover {
+                top: 100px;
+            }
+
+            div#janela ul li.principal div.foto div.legenda h5 {
+                font-family: sans-serif;
+                text-transform: uppercase;
+                font-weight: 100;
+                color: aqua;
+                margin: 0;
+            }
             
         </style>
         <script src="js/jquery.js"></script>        

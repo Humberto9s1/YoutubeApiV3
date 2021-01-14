@@ -26,7 +26,8 @@ $(document).ready(function() {
 
                 $.each(data.items, function(i, item) {
                     imagem = item.snippet.thumbnails.medium.url;
-                    arquivo = '<li><img src="' + imagem + '"/></li>';
+                    titulo = item.snippet.title;
+                    arquivo = '<li class="principal"><div class="foto"><img src="' + imagem + '"/><div class="legenda"><h5>' + titulo + '</h5><div/><div/></li>';
                     $('div#janela ul').append(arquivo);
                 });
             }
