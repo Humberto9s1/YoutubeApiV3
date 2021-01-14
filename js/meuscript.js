@@ -1,4 +1,4 @@
-var nomeCanal = 'backtotriangle';
+var nomeCanal = 'sikera1000';
 var upload_id;
 
 $(document).ready(function() {
@@ -28,7 +28,8 @@ $(document).ready(function() {
                     imagem      = item.snippet.thumbnails.medium.url;
                     titulo      = item.snippet.title;
                     publicado   = formatarData(item.snippet.publishedAt);
-                    arquivo     = '<li class="principal"><div class="foto"><img src="' + imagem + '"/><div class="legenda"><h5>' + titulo + '</h5><p>Data: ' + publicado + '</p><div/><div/></li>';
+                    videoId   = item.snippet.resourceId.videoId;
+                    arquivo     = '<li class="principal"><a class="fancybox-media" href="https://www.youtube.com/watch?v=' + videoId + '"><div class="foto"><img src="' + imagem + '"/><div class="legenda"><h5>' + titulo + '</h5><p>Data: ' + publicado + '</p><div/><div/></a></li>';
                     $('div#janela ul').append(arquivo);
                 });
             }
