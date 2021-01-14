@@ -5,7 +5,7 @@ $(document).ready(function() {
     $.get("https://www.googleapis.com/youtube/v3/channels", {
             part: 'contentDetails',
             forUsername: nomeCanal,
-            key: 'AIzaSyB49WfTkgfK2menTbmVCkLG0f9cYWQ9XKU'},
+            key: 'AIzaSyAcPYkguKj7oqrRrADgFl5VU2hDjAe9frA'},
             function(data) {
                 upload_id = data.items[0].contentDetails.relatedPlaylists.uploads;
                 pegarVideos(upload_id);
@@ -17,7 +17,7 @@ $(document).ready(function() {
                     part:'snippet',
                     maxResults: 12,
                     playlistId: id,
-                    key: 'AIzaSyB49WfTkgfK2menTbmVCkLG0f9cYWQ9XKU'},
+                    key: 'AIzaSyAcPYkguKj7oqrRrADgFl5VU2hDjAe9frA'},
             function(data) {
                 var imagem;
                 var arquivo;
