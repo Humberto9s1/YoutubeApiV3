@@ -25,15 +25,20 @@ $(document).ready(function() {
                 var arquivo;
 
                 $.each(data.items, function(i, item) {
-                    imagem = item.snippet.thumbnails.medium.url;
-                    titulo = item.snippet.title;
-                    arquivo = '<li class="principal"><div class="foto"><img src="' + imagem + '"/><div class="legenda"><h5>' + titulo + '</h5><div/><div/></li>';
+                    imagem      = item.snippet.thumbnails.medium.url;
+                    titulo      = item.snippet.title;
+                    publicado   = formatarData(item.snippet.publishedAt);
+                    arquivo     = '<li class="principal"><div class="foto"><img src="' + imagem + '"/><div class="legenda"><h5>' + titulo + '</h5><p>Data: ' + publicado + '</p><div/><div/></li>';
                     $('div#janela ul').append(arquivo);
                 });
             }
         
         )
         
+    }
+
+    function formatarData(data) {
+        return data.substr(8,2) + '/' + data.substr(5,2) + '/' + data.substr(0,4)
     }
 
 });
